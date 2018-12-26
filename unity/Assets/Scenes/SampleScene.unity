@@ -248,7 +248,6 @@ GameObject:
   - component: {fileID: 1187318683}
   - component: {fileID: 1187318686}
   - component: {fileID: 1187318685}
-  - component: {fileID: 1187318684}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -270,19 +269,6 @@ Transform:
   m_Father: {fileID: 2052511312}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1187318684
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187318682}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1187318685
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -300,7 +286,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 917163657861441b1a2fb5b32f8074d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5072,8 +5058,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610721bfed5ac427eb17df7654964b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.51
-  rotateSpeed: 0.21
+  speed: 150
+  rotationSpeed: 300
+  shipRotationSpeed: 80
+  maxShipRotation: 20
+  shipCorrectionTime: 1
 --- !u!50 &2052511314
 Rigidbody2D:
   serializedVersion: 4
@@ -5087,8 +5076,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 6
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0

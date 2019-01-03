@@ -26,6 +26,7 @@ public class Moon : Body
         transform.position = Vector3.up * orbitRadius;
         orbitSpeed = Random.Range(minOrbitSpeed, maxOrbitSpeed);
         parentTransform = transform.parent;
+        transform.RotateAround(parentTransform.position, Vector3.forward, Random.Range(0, 360));
     }
 
     // Update is called once per frame

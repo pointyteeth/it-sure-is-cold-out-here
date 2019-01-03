@@ -6,39 +6,19 @@ public class GenerateSystem : MonoBehaviour
 {
 
     [SerializeField]
-    private Moon moon1Prefab = null;
+    private BodySet starSet = null;
     [SerializeField]
-    private int minNumberOfMoon1s = 0;
+    private BodySet moon1Set = null;
     [SerializeField]
-    private int maxNumberOfMoon1s = 0;
-    private int numberOfMoon1s;
-    private Moon[] moon1 = null;
-
-    [SerializeField]
-    private Star starPrefab = null;
-    [SerializeField]
-    private int minNumberOfStars = 0;
-    [SerializeField]
-    private int maxNumberOfStars = 0;
-    private int numberOfStars;
-    private Star[] star = null;
+    private BodySet moon2Set = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        numberOfMoon1s = Random.Range(minNumberOfMoon1s, maxNumberOfMoon1s);
-        moon1 = new Moon[numberOfMoon1s];
-        for(int i = 0; i < numberOfMoon1s; i++) {
-            moon1[i] = Instantiate(moon1Prefab);
-            moon1[i].transform.parent = transform;
-        }
-
-
-        numberOfStars = Random.Range(minNumberOfStars, maxNumberOfStars);
-        star = new Star[numberOfStars];
-        for(int i = 0; i < numberOfStars; i++) {
-            star[i] = Instantiate(starPrefab);
-            star[i].transform.parent = transform;
+        starSet.Setup(transform);
+        moon1Set.Setup(transform);
+        for(int i = 0; i < moon1Set.list.Length; i++) {
+            moon2Set.Setup(moon1Set.list[i].transform);
         }
     }
 
@@ -46,5 +26,29 @@ public class GenerateSystem : MonoBehaviour
     void Update()
     {
 
+    }
+}
+
+[System.Serializable]
+class BodySet : System.Object
+{
+    [SerializeField]
+    private Body bodyPrefab = null;
+    public Body[] list = null;
+    [SerializeField]
+    private int minNumber = 0;
+    [SerializeField]
+    private int maxNumber = 0;
+    private int numBodies = 0;
+
+    public void Setup(Transform parent)
+    {
+        numBodies = Random.Range(minNumber, maxNumber);
+        list = new Body[numBodies];
+        for(int i = 0; i < numBodies; i++) {
+            list[i] = GameObject.Instantiate(bodyPrefab);
+            list[i].transform.parent = parent;
+            list[i].name = bodyPrefab.name + " " + i;
+        }
     }
 }

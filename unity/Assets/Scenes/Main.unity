@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 87895254}
   - component: {fileID: 87895253}
   - component: {fileID: 87895252}
+  - component: {fileID: 87895259}
   - component: {fileID: 87895258}
   - component: {fileID: 87895256}
   - component: {fileID: 87895257}
@@ -204,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 87895251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 13.453, y: 13.453, z: 13.453}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -230,7 +231,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -326,7 +327,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -419,13 +420,65 @@ MonoBehaviour:
     minNumber: 50
     maxNumber: 100
   moon1Set:
-    bodyPrefab: {fileID: 0}
-    minNumber: 0
-    maxNumber: 0
+    bodyPrefab: {fileID: 443776314740779607, guid: 975ed3ce1caae784183081e0bab8e0be,
+      type: 3}
+    minNumber: 5
+    maxNumber: 7
   moon2Set:
-    bodyPrefab: {fileID: 0}
-    minNumber: 0
-    maxNumber: 0
+    bodyPrefab: {fileID: 443776314740779607, guid: 8a0a92a9e00b0ae449676c8887b383cf,
+      type: 3}
+    minNumber: 3
+    maxNumber: 7
+  moon3Set:
+    bodyPrefab: {fileID: 443776314740779607, guid: 16aa5a240b0796d4ca3010f405d4f979,
+      type: 3}
+    minNumber: -3
+    maxNumber: 1
+--- !u!114 &87895259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87895251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc659b4dafb52b4592e4cb5289991c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: 1
+  maxScale: 1
+  colorRange:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  minRotationSpeed: 5
+  maxRotationSpeed: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

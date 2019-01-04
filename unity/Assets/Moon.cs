@@ -20,19 +20,20 @@ public class Moon : Body
     private Transform parentTransform = null;
 
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
-        orbitRadius = Random.Range(minOrbitRadius, maxOrbitRadius);
-        transform.position = Vector3.up * orbitRadius;
-        orbitSpeed = Random.Range(minOrbitSpeed, maxOrbitSpeed);
+        base.Start();
         parentTransform = transform.parent;
+        orbitRadius = Random.Range(minOrbitRadius, maxOrbitRadius);
+        transform.localPosition = Vector3.up * orbitRadius;
+        orbitSpeed = Random.Range(minOrbitSpeed, maxOrbitSpeed);
         transform.RotateAround(parentTransform.position, Vector3.forward, Random.Range(0, 360));
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
-        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+        base.Update();
         transform.RotateAround(parentTransform.position, Vector3.forward, orbitSpeed * Time.deltaTime);
     }
 }

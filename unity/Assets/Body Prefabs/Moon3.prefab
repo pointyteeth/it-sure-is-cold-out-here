@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 419684574535195044}
   - component: {fileID: 443776314740779607}
   m_Layer: 0
-  m_Name: Moon2
+  m_Name: Moon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6570765963379222703}
+  - {fileID: 4330042413833513338}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minScale: 1
-  maxScale: 3
+  maxScale: 1.5
   colorRange:
     serializedVersion: 2
     key0: {r: 1, g: 0.83137256, b: 0.8745098, a: 1}
@@ -139,13 +139,13 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  minRotationSpeed: -8
-  maxRotationSpeed: 8
-  minOrbitRadius: 5
-  maxOrbitRadius: 75
-  minOrbitSpeed: -10
-  maxOrbitSpeed: 10
---- !u!1001 &7171194026553210468
+  minRotationSpeed: -5
+  maxRotationSpeed: 5
+  minOrbitRadius: 1.5
+  maxOrbitRadius: 3
+  minOrbitSpeed: -8
+  maxOrbitSpeed: 8
+--- !u!1001 &333926690218751921
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -221,12 +221,12 @@ PrefabInstance:
         type: 3}
       propertyPath: moveWithCustomTransform
       value: 
-      objectReference: {fileID: 4508704637069054928}
+      objectReference: {fileID: 4330042413833513338}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ed200060adf6a645b486572057a83b4, type: 3}
---- !u!4 &6570765963379222703 stripped
+--- !u!4 &4330042413833513338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4086240597577916107, guid: 2ed200060adf6a645b486572057a83b4,
     type: 3}
-  m_PrefabInstance: {fileID: 7171194026553210468}
+  m_PrefabInstance: {fileID: 333926690218751921}
   m_PrefabAsset: {fileID: 0}

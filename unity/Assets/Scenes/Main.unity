@@ -168,7 +168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 917163657861441b1a2fb5b32f8074d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -427,8 +427,8 @@ MonoBehaviour:
   moon2Set:
     bodyPrefab: {fileID: 443776314740779607, guid: 8a0a92a9e00b0ae449676c8887b383cf,
       type: 3}
-    minNumber: 3
-    maxNumber: 7
+    minNumber: 0
+    maxNumber: 0
   moon3Set:
     bodyPrefab: {fileID: 443776314740779607, guid: 16aa5a240b0796d4ca3010f405d4f979,
       type: 3}
@@ -477,8 +477,6 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  minRotationSpeed: 5
-  maxRotationSpeed: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,8 +759,9 @@ GameObject:
   - component: {fileID: 2022021447}
   - component: {fileID: 2022021446}
   - component: {fileID: 2022021445}
+  - component: {fileID: 2022021448}
   m_Layer: 0
-  m_Name: Particle Stars Test
+  m_Name: Particle Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,7 +1543,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 200
+      value: 100
       mode: 0
       spread: 0
       speed:
@@ -5448,6 +5447,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2022021448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022021444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50097a5293fae422bae65ea07ad5dcad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2052511311
 GameObject:
   m_ObjectHideFlags: 0
@@ -5460,6 +5471,7 @@ GameObject:
   - component: {fileID: 2052511313}
   - component: {fileID: 2052511314}
   - component: {fileID: 2052511315}
+  - component: {fileID: 2052511316}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5475,7 +5487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052511311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 10, z: 0}
+  m_LocalPosition: {x: 5, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -5536,3 +5548,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
+--- !u!232 &2052511316
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052511311}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 100
+  m_MaxDistanceOnly: 1

@@ -21,6 +21,9 @@ public class PlayerControl : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         ship = GameObject.Find("Ship");
+        transform.position = Vector3.up * (Main.worldRadius - 10);
+        transform.RotateAround(Vector3.zero, Vector3.forward, Random.Range(0, 360));
+        GetComponent<DistanceJoint2D>().distance = Main.worldRadius;
     }
 
     void FixedUpdate()

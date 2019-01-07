@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 917163657861441b1a2fb5b32f8074d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139,12 +139,10 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  minRotationSpeed: -5
-  maxRotationSpeed: 5
   minOrbitRadius: 25
   maxOrbitRadius: 175
-  minOrbitSpeed: -5
-  maxOrbitSpeed: 5
+  minOrbitSpeed: -0.5
+  maxOrbitSpeed: 0.5
 --- !u!1001 &2266813212868781744
 PrefabInstance:
   m_ObjectHideFlags: 0

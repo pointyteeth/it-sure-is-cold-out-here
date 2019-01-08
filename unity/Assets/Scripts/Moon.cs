@@ -15,7 +15,8 @@ public class Moon : Body
     private float minOrbitSpeed = 0;
     [SerializeField]
     private float maxOrbitSpeed = 0;
-    private float orbitSpeed = 0;
+    [System.NonSerialized]
+    public float orbitSpeed = 0;
 
     private Transform parentTransform = null;
 

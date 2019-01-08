@@ -8,6 +8,8 @@ public class GenerateSystem : MonoBehaviour
     [SerializeField]
     private BodySet starSet = null;
     [SerializeField]
+    public static float orbitTrailAmount = 0.9f;
+    [SerializeField]
     private BodySet moon1Set = null;
     [SerializeField]
     private BodySet moon2Set = null;

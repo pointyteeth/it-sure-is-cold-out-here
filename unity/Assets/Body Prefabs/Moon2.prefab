@@ -139,12 +139,10 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  minRotationSpeed: -8
-  maxRotationSpeed: 8
   minOrbitRadius: 5
   maxOrbitRadius: 75
-  minOrbitSpeed: -10
-  maxOrbitSpeed: 10
+  minOrbitSpeed: -1
+  maxOrbitSpeed: 1
 --- !u!1001 &7171194026553210468
 PrefabInstance:
   m_ObjectHideFlags: 0

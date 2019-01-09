@@ -17,6 +17,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private float maxShipRotation = 0f;
 
+    public static Transform playerTransform = null;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -24,6 +26,7 @@ public class PlayerControl : MonoBehaviour
         transform.position = Vector3.up * (Main.worldRadius - 10);
         transform.RotateAround(Vector3.zero, Vector3.forward, Random.Range(0, 360));
         GetComponent<DistanceJoint2D>().distance = Main.worldRadius;
+        playerTransform = transform;
     }
 
     void FixedUpdate()

@@ -19,10 +19,13 @@ public class Body : MonoBehaviour
     private AudioClip[] audioClips = null;
     protected AudioSource audioSource = null;
 
+    void Awake() {
+        transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
+    }
+
     // Start is called before the first frame update
     protected void Start()
     {
-        transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
         if(hasAudio) {
             audioSource = GetComponent<AudioSource>();
             audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
@@ -35,7 +38,7 @@ public class Body : MonoBehaviour
     protected void Update()
     {
         if(hasAudio) {
-            audioSource.priority = (int) Mathf.Lerp(0, 256, Vector3.Distance(transform.position, PlayerControl.playerTransform.position)/(Main.worldRadius*2));
+            audioSource.priority = (int) Mathf.Lerp(0, 256, Vector3.Distance(transform.position, Main.playerTransform.position)/(Main.worldRadius*2));
         }
     }
 

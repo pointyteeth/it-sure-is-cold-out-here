@@ -22,11 +22,12 @@ public class Moon : Body
 
     // Start is called before the first frame update
     new void Start()
-    {
+    {//TODO: PUT SOME OF THIS SHIT IN AWAKE?? I THINK THE SIZE IS CORRECT, IT'S JUST THE ORBITRADIUS THAT'S OFF
         base.Start();
         parentTransform = transform.parent;
         orbitRadius = Random.Range(minOrbitRadius, maxOrbitRadius);
-        transform.localPosition = Vector3.up * orbitRadius;
+        transform.localPosition = Vector3.zero;
+        transform.Translate(Vector3.up * orbitRadius);
         orbitSpeed = Random.Range(minOrbitSpeed, maxOrbitSpeed);
         transform.RotateAround(parentTransform.position, Vector3.forward, Random.Range(0, 360));
     }

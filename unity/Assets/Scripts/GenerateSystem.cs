@@ -56,8 +56,8 @@ class BodySet : System.Object
             list = new Body[numBodies];
             for(int i = 0; i < numBodies; i++) {
                 list[i] = GameObject.Instantiate(bodyPrefab);
-                list[i].transform.parent = parent;
                 list[i].name = bodyPrefab.name + " " + i;
+                list[i].transform.parent = parent;
             }
         }
     }

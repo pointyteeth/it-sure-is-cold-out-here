@@ -17,16 +17,14 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private float maxShipRotation = 0f;
 
-    public static Transform playerTransform = null;
-
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         ship = GameObject.Find("Ship");
         transform.position = Vector3.up * (Main.worldRadius - 10);
         transform.RotateAround(Vector3.zero, Vector3.forward, Random.Range(0, 360));
+        transform.Rotate(Vector3.forward * 180);
         GetComponent<DistanceJoint2D>().distance = Main.worldRadius;
-        playerTransform = transform;
     }
 
     void FixedUpdate()
@@ -45,6 +43,15 @@ public class PlayerControl : MonoBehaviour
             ship.transform.Rotate(Vector3.up * shipRotationSpeed * direction * Time.deltaTime);
         } else if(direction == 0) {
             ship.transform.localRotation = Quaternion.RotateTowards(ship.transform.localRotation, Quaternion.identity, Time.deltaTime * shipRotationSpeed);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.name == "Mother")
+        {
+            GetComponent<PlayerLand>().enabled = true;
+            this.enabled = false;
         }
     }
 }

@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89684c706af0b446bb4992301a349b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 2
-  maxScale: 4
+  minScale: 3
+  maxScale: 5
   colorRange:
     serializedVersion: 2
     key0: {r: 1, g: 0.83137256, b: 0.8745098, a: 1}

@@ -205,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 87895251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -327,7 +327,7 @@ AudioSource:
   Priority: 0
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 100
+  MaxDistance: 200
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -417,13 +417,13 @@ MonoBehaviour:
   starSet:
     bodyPrefab: {fileID: 4694130758994131282, guid: e71f3a8111190e8468695087c7774c9e,
       type: 3}
-    minNumber: 50
+    minNumber: 80
     maxNumber: 100
   moon1Set:
     bodyPrefab: {fileID: 443776314740779607, guid: 975ed3ce1caae784183081e0bab8e0be,
       type: 3}
-    minNumber: 1
-    maxNumber: 1
+    minNumber: 5
+    maxNumber: 7
   moon2Set:
     bodyPrefab: {fileID: 443776314740779607, guid: 8a0a92a9e00b0ae449676c8887b383cf,
       type: 3}
@@ -432,7 +432,7 @@ MonoBehaviour:
   moon3Set:
     bodyPrefab: {fileID: 443776314740779607, guid: 16aa5a240b0796d4ca3010f405d4f979,
       type: 3}
-    minNumber: -3
+    minNumber: -4
     maxNumber: 1
 --- !u!114 &87895259
 MonoBehaviour:
@@ -446,8 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc659b4dafb52b4592e4cb5289991c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 1
-  maxScale: 1
+  minScale: 15
+  maxScale: 15
   colorRange:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5472,6 +5472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2052511312}
   - component: {fileID: 2052511313}
+  - component: {fileID: 2052511317}
   - component: {fileID: 2052511314}
   - component: {fileID: 2052511315}
   - component: {fileID: 2052511316}
@@ -5570,3 +5571,19 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 100
   m_MaxDistanceOnly: 1
+--- !u!114 &2052511317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052511311}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5d26f7e277a4f2687d820732ce6316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationTime: 2
+  maxRotationSpeed: 15
+  angleError: 1
+  backUpSpeed: 30

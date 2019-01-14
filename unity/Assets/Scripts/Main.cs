@@ -7,6 +7,8 @@ public class Main : MonoBehaviour
 
     [SerializeField]
     public static float worldRadius = 200;
+    public static Transform playerTransform = null;
+    public static Transform motherTransform = null;
     [SerializeField]
     public float warmUpTime = 0;
 
@@ -14,6 +16,8 @@ public class Main : MonoBehaviour
     void Start()
     {
         Physics2D.gravity = Vector3.zero;
+        playerTransform = GameObject.Find("Player").transform;
+        motherTransform = GameObject.Find("Mother").transform;
         StartCoroutine("WarmUpTrails");
     }
 

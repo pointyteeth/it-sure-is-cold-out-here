@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 917163657861441b1a2fb5b32f8074d9, type: 2}
+  - {fileID: 2100000, guid: 31cb933db2f3d894bb80247eba2bcd08, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,11 +250,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4508704637069054928}
     m_Modifications:
-    - target: {fileID: 4086240597577916102, guid: 2ed200060adf6a645b486572057a83b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Trail Particles
-      objectReference: {fileID: 0}
     - target: {fileID: 4086240597577916107, guid: 2ed200060adf6a645b486572057a83b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -309,6 +304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086240597577916102, guid: 2ed200060adf6a645b486572057a83b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Trail Particles
       objectReference: {fileID: 0}
     - target: {fileID: 4086240597577916101, guid: 2ed200060adf6a645b486572057a83b4,
         type: 3}

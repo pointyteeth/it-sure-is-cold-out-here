@@ -1,9 +1,11 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "it-sure-is-cold-out-here/Outline Unlit"
 {
   Properties {
     _MainTex ("Texture", 2D) = "white" {}
 	_OutlineColor ("Outline Color", Color) = (0,1,0,1)
-    _Outline ("Outline width", Range (0.002, 0.03)) = 0.01
+    _Outline ("Outline width", Range (0.001, 0.05)) = 0.01
   }
   SubShader {
     Tags { "RenderType" = "Opaque" }
@@ -74,16 +76,12 @@ Shader "it-sure-is-cold-out-here/Outline Unlit"
          float4 _OutlineColor;
 
          v2f vert(appdata v) {
-            v2f o;
-            o.pos = UnityObjectToClipPos(v.vertex);
-            float3 norm = UnityObjectToViewPos(v.normal);
-            norm.x *= UNITY_MATRIX_P[0][0];
-            norm.y *= UNITY_MATRIX_P[1][1];
-            o.pos.xy += norm.xy * o.pos.z * _Outline;
-			o.pos.z += 0.001;
-
-            o.color = _OutlineColor;
-            return o;
+		 	v2f o;
+			o.pos = v.vertex;
+			o.pos.xyz += v.normal.xyz * _Outline;
+			o.pos = UnityObjectToClipPos(o.pos);
+			o.color = _OutlineColor;
+			return o;
          }
 
 		 fixed4 frag_mult(v2f i) : COLOR
@@ -96,6 +94,7 @@ Shader "it-sure-is-cold-out-here/Outline Unlit"
          ZWrite On
          ColorMask RGB
          Blend SrcAlpha OneMinusSrcAlpha
+         //? -Note: I don't remember why I put a "?" here
          SetTexture [_MainTex] { combine primary }
 	}
   }

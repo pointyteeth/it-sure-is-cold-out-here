@@ -40,7 +40,9 @@ public class Moon : Body
         orbitSpeed = Random.Range(minOrbitSpeed, maxOrbitSpeed);
         if(Random.value > 0.5f) orbitSpeed *= -1;
         transform.RotateAround(parentTransform.position, Vector3.forward, Random.Range(0, 360));
-        GetComponent<Renderer>().material.SetTexture("_MainTex", textures[Random.Range(0, textures.Length)]);
+        Material material = GetComponent<Renderer>().material;
+        material.SetTexture("_MainTex", textures[Random.Range(0, textures.Length)]);
+        material.SetFloat("_Outline", material.GetFloat("_Outline")/transform.lossyScale.x);
     }
 
     // Update is called once per frame

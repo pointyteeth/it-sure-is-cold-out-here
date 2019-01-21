@@ -18,18 +18,29 @@ public class Moon : Body
     [System.NonSerialized]
     public float orbitSpeed = 0;
 
+    [SerializeField]
+    protected Texture[] textures = null;
+
     private Transform parentTransform = null;
+
+    new void Awake() {
+        base.Awake();
+        transform.rotation = Random.rotation;
+    }
 
     // Start is called before the first frame update
     new void Start()
-    {//TODO: PUT SOME OF THIS SHIT IN AWAKE?? I THINK THE SIZE IS CORRECT, IT'S JUST THE ORBITRADIUS THAT'S OFF
+    {
         base.Start();
         parentTransform = transform.parent;
-        orbitRadius = Random.Range(minOrbitRadius, maxOrbitRadius);
+        float spacing = (maxOrbitRadius - minOrbitRadius)/numBodies;
+        orbitRadius = minOrbitRadius + spacing * index + Random.Range(0, spacing/2);
         transform.localPosition = Vector3.zero;
-        transform.Translate(Vector3.up * orbitRadius);
+        transform.Translate(Vector3.up * orbitRadius, Space.World);
         orbitSpeed = Random.Range(minOrbitSpeed, maxOrbitSpeed);
+        if(Random.value > 0.5f) orbitSpeed *= -1;
         transform.RotateAround(parentTransform.position, Vector3.forward, Random.Range(0, 360));
+        GetComponent<Renderer>().material.SetTexture("_MainTex", textures[Random.Range(0, textures.Length)]);
     }
 
     // Update is called once per frame

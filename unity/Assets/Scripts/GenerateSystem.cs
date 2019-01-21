@@ -43,21 +43,18 @@ class BodySet : System.Object
     private Body bodyPrefab = null;
     [System.NonSerialized]
     public Body[] list = new Body[0];
-    [SerializeField]
-    private int minNumber = 0;
-    [SerializeField]
-    private int maxNumber = 0;
-    private int numBodies = 0;
 
     public void Setup(Transform parent=null)
     {
-        numBodies = Random.Range(minNumber, maxNumber + 1);
-        if(numBodies > 0) {
-            list = new Body[numBodies];
-            for(int i = 0; i < numBodies; i++) {
+        bodyPrefab.numBodies = Random.Range(bodyPrefab.minNumber, bodyPrefab.maxNumber + 1);
+        if(bodyPrefab.numBodies > 0) {
+            list = new Body[bodyPrefab.numBodies];
+            for(int i = 0; i < bodyPrefab.numBodies; i++) {
                 list[i] = GameObject.Instantiate(bodyPrefab);
                 list[i].name = bodyPrefab.name + " " + i;
                 list[i].transform.parent = parent;
+                list[i].numBodies = bodyPrefab.numBodies;
+                list[i].index = i;
             }
         }
     }

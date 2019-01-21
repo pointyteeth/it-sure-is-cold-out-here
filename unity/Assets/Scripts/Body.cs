@@ -5,13 +5,21 @@ using UnityEngine;
 public class Body : MonoBehaviour
 {
 
+    public int minNumber = 0;
+    public int maxNumber = 0;
+    [System.NonSerialized]
+    public int numBodies = 0;
+
     [SerializeField]
     protected float minScale = 1;
     [SerializeField]
     protected float maxScale = 1;
 
-    [SerializeField]
-    protected Gradient colorRange = new Gradient();
+    [System.NonSerialized]
+    public int index = 0;
+
+    /*[SerializeField]
+    protected Gradient colorRange = new Gradient();*/
 
     [SerializeField]
     private bool hasAudio = false;
@@ -19,7 +27,7 @@ public class Body : MonoBehaviour
     private AudioClip[] audioClips = null;
     protected AudioSource audioSource = null;
 
-    void Awake() {
+    protected void Awake() {
         transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
     }
 

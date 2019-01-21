@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5379552089027429097}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 371b8022896dd244a82c048209b16a84, type: 3}
 --- !u!23 &7450294163853093630
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!114 &443776314740779607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89684c706af0b446bb4992301a349b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minNumber: -3
+  maxNumber: 1
   minScale: 0.5
   maxScale: 0.8
   colorRange:
@@ -143,10 +145,20 @@ MonoBehaviour:
   hasAudio: 1
   audioClips:
   - {fileID: 8300000, guid: c1ad8307f7be344ffb4b8653843372e5, type: 3}
-  minOrbitRadius: 1.5
-  maxOrbitRadius: 3
-  minOrbitSpeed: -8
+  minOrbitRadius: 2
+  maxOrbitRadius: 5
+  minOrbitSpeed: 4
   maxOrbitSpeed: 8
+  textures:
+  - {fileID: 2800000, guid: bc1ebfed457f33040b6de46fbdbfc3d3, type: 3}
+  - {fileID: 2800000, guid: 4e556a52e9f380346a11cd0dd58694c8, type: 3}
+  - {fileID: 2800000, guid: 6b04fa14a1a36694bacead42aba717c2, type: 3}
+  - {fileID: 2800000, guid: 9d06546051823e8499cc57c369c8da8c, type: 3}
+  - {fileID: 2800000, guid: 9d6806ef5eb376249a27f173fd56a99a, type: 3}
+  - {fileID: 2800000, guid: 80d75e92ebbf912418e6024107767903, type: 3}
+  - {fileID: 2800000, guid: 5166262e50dd3b941a0f361654739f09, type: 3}
+  - {fileID: 2800000, guid: b092bd6cffe31884c9fbb5707d78c390, type: 3}
+  - {fileID: 2800000, guid: ecde2620b2c94a6409ee05c9c9947dc4, type: 3}
 --- !u!82 &24169246127102832
 AudioSource:
   m_ObjectHideFlags: 0

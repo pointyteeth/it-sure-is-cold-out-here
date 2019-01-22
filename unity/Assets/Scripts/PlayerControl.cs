@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
 
-    new private Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody;
     GameObject ship;
 
     [SerializeField]
@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetButton("Jump")) { //Thrust
+        if (Input.GetButton("Forward Thrust")) { //Thrust
             rigidbody.AddRelativeForce(Vector2.up * speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.LeftShift)) { //Reverse Thrust

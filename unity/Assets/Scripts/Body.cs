@@ -46,7 +46,7 @@ public class Body : MonoBehaviour
     protected void Update()
     {
         if(hasAudio) {
-            audioSource.priority = (int) Mathf.Lerp(0, 256, Vector3.Distance(transform.position, Main.playerTransform.position)/(Main.worldRadius*2));
+            audioSource.priority = (int) Mathf.Lerp(0, 256, Vector3.Distance(transform.position, Main.player.transform.position)/(Main.worldRadius*2));
         }
     }
 

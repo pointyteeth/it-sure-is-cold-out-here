@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
 
-    private Rigidbody2D rigidbody;
+    new private Rigidbody2D rigidbody;
     GameObject ship;
 
     [SerializeField]
@@ -21,20 +21,19 @@ public class PlayerControl : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         ship = GameObject.Find("Ship");
+        GetComponent<DistanceJoint2D>().distance = Main.worldRadius;
+    }
+
+    public void PutShipInStartPosition() {
         transform.position = Vector3.up * (Main.worldRadius - 10);
         transform.RotateAround(Vector3.zero, Vector3.forward, Random.Range(0, 360));
         transform.Rotate(Vector3.forward * 180);
-        GetComponent<DistanceJoint2D>().distance = Main.worldRadius;
+        rigidbody.simulated = true;
     }
 
     void FixedUpdate()
     {
-        if (Input.GetButton("Forward Thrust")) { //Thrust
-            rigidbody.AddRelativeForce(Vector2.up * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.LeftShift)) { //Reverse Thrust
-            rigidbody.AddRelativeForce(Vector2.down * speed * Time.deltaTime);
-        }
+        rigidbody.AddRelativeForce(Vector2.up * Input.GetAxis("Vertical") * speed * Time.deltaTime);
         float direction = -Input.GetAxis("Horizontal");
         rigidbody.AddTorque(direction * rotationSpeed * Time.deltaTime); //Turn
         float rotation = ship.transform.localRotation.eulerAngles.y;

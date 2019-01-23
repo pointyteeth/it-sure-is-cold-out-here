@@ -7,12 +7,12 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: Horizontal
-    descriptiveName: 
+    descriptiveName: Turn ship.
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
-    altNegativeButton: a
-    altPositiveButton: d
+    altNegativeButton: x
+    altPositiveButton: x
     gravity: 3
     dead: 0.001
     sensitivity: 3
@@ -22,13 +22,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Forward Thrust
-    descriptiveName: 
+    m_Name: Vertical
+    descriptiveName: Move ship forwards.
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: left shift
     positiveButton: space
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton: 0
+    altPositiveButton: 2
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -38,13 +38,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Backward Thrust
-    descriptiveName: 
+    m_Name: Submit
+    descriptiveName: Select a menu option.
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: right shift
+    positiveButton: return
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: 2
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -54,29 +54,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Horizontal
-    descriptiveName: 
+    m_Name: Cancel
+    descriptiveName: Open the menu.
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: escape
     altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0.19
-    sensitivity: 1
-    snap: 0
-    invert: 0
-    type: 2
-    axis: 0
-    joyNum: 0
-  - serializedVersion: 3
-    m_Name: Forward Thrust
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick button 3
-    altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: 1
     gravity: 1000
     dead: 0.001
     sensitivity: 1000

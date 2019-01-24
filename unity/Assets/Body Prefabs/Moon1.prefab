@@ -113,35 +113,6 @@ MonoBehaviour:
   maxNumber: 9
   minScale: 3
   maxScale: 5
-  colorRange:
-    serializedVersion: 2
-    key0: {r: 1, g: 0.83137256, b: 0.8745098, a: 1}
-    key1: {r: 1, g: 0.9529412, b: 0.69803923, a: 1}
-    key2: {r: 0.5529412, g: 0.87058824, b: 1, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 31997
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
   hasAudio: 1
   audioClips:
   - {fileID: 8300000, guid: c71af2113edd29142ab02f8d2614804f, type: 3}
@@ -150,15 +121,10 @@ MonoBehaviour:
   minOrbitSpeed: 0.2
   maxOrbitSpeed: 0.5
   textures:
-  - {fileID: 2800000, guid: bc1ebfed457f33040b6de46fbdbfc3d3, type: 3}
-  - {fileID: 2800000, guid: 4e556a52e9f380346a11cd0dd58694c8, type: 3}
-  - {fileID: 2800000, guid: 6b04fa14a1a36694bacead42aba717c2, type: 3}
-  - {fileID: 2800000, guid: 9d06546051823e8499cc57c369c8da8c, type: 3}
-  - {fileID: 2800000, guid: 9d6806ef5eb376249a27f173fd56a99a, type: 3}
-  - {fileID: 2800000, guid: 80d75e92ebbf912418e6024107767903, type: 3}
-  - {fileID: 2800000, guid: 5166262e50dd3b941a0f361654739f09, type: 3}
-  - {fileID: 2800000, guid: b092bd6cffe31884c9fbb5707d78c390, type: 3}
-  - {fileID: 2800000, guid: ecde2620b2c94a6409ee05c9c9947dc4, type: 3}
+  - {fileID: 2800000, guid: 8ef76b8a7ddac4c89ab386dcd28e3487, type: 3}
+  - {fileID: 2800000, guid: 5fcf7deb3031f441e90118fe36c0544f, type: 3}
+  - {fileID: 2800000, guid: a466d12a10a864bf5a3e97d27d604f1f, type: 3}
+  - {fileID: 2800000, guid: acb2ac71804084dfdbb7d84609d131dd, type: 3}
 --- !u!82 &6025895562621542285
 AudioSource:
   m_ObjectHideFlags: 0
@@ -262,6 +228,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4508704637069054928}
     m_Modifications:
+    - target: {fileID: 4086240597577916102, guid: 2ed200060adf6a645b486572057a83b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Trail Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086240597577916102, guid: 2ed200060adf6a645b486572057a83b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4086240597577916107, guid: 2ed200060adf6a645b486572057a83b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -316,16 +292,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4086240597577916102, guid: 2ed200060adf6a645b486572057a83b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Trail Particles
-      objectReference: {fileID: 0}
-    - target: {fileID: 4086240597577916102, guid: 2ed200060adf6a645b486572057a83b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4086240597577916101, guid: 2ed200060adf6a645b486572057a83b4,
         type: 3}

@@ -13,6 +13,7 @@ public class Main : MonoBehaviour
     public static GameObject canvas = null;
     [SerializeField]
     public float warmUpTime = 0;
+    public bool gameStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +28,13 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Cancel")) {
-            canvas.SetActive(true);
+        if(Input.GetButtonUp("Cancel")) {
+            if(canvas.activeSelf && gameStarted) {
+                canvas.SetActive(false);
+            } else if(!canvas.activeSelf) {
+                canvas.SetActive(true);
+                GameObject.Find("start").GetComponent<Selectable>().Select();
+            }
         }
     }
 
@@ -39,6 +45,7 @@ public class Main : MonoBehaviour
             yield return new WaitForSeconds(warmUpTime);
         }
         Time.timeScale = 1;
+        GameObject.Find("start").GetComponent<Selectable>().interactable = true;
         yield return null;
     }
 
@@ -46,6 +53,7 @@ public class Main : MonoBehaviour
     {
         player.PutShipInStartPosition();
         canvas.SetActive(false);
+        gameStarted = true;
     }
 
     public void Quit()

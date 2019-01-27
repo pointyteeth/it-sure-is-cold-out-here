@@ -115,7 +115,11 @@ MonoBehaviour:
   maxScale: 5
   hasAudio: 1
   audioClips:
-  - {fileID: 8300000, guid: c71af2113edd29142ab02f8d2614804f, type: 3}
+  - {fileID: 8300000, guid: b4844982f02fe454c8ba9754ac1bcd13, type: 3}
+  - {fileID: 8300000, guid: ccbf26687c4424ac7a724ecc48a39b4a, type: 3}
+  - {fileID: 8300000, guid: 4a9e12f8f7dfb4bb39eff1367cef23d6, type: 3}
+  - {fileID: 8300000, guid: a7cdd94d962674142a667b359383b9ff, type: 3}
+  - {fileID: 8300000, guid: 34a3dabb4493f4ae18ee8fbcfc2adaeb, type: 3}
   minOrbitRadius: 25
   maxOrbitRadius: 175
   minOrbitSpeed: 0.2
@@ -144,9 +148,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0.1
   MinDistance: 1
-  MaxDistance: 200
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -303,6 +307,11 @@ PrefabInstance:
       propertyPath: moveWithCustomTransform
       value: 
       objectReference: {fileID: 4508704637069054928}
+    - target: {fileID: 4086240597577916101, guid: 2ed200060adf6a645b486572057a83b4,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ed200060adf6a645b486572057a83b4, type: 3}
 --- !u!4 &2864404498470533243 stripped

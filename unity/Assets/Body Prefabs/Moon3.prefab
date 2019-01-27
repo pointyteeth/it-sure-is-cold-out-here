@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4294752894593182992}
   - component: {fileID: 7450294163853093630}
   - component: {fileID: 419684574535195044}
-  - component: {fileID: 443776314740779607}
+  - component: {fileID: 6827746130603291010}
   - component: {fileID: 24169246127102832}
   m_Layer: 0
   m_Name: Moon3
@@ -97,7 +97,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &443776314740779607
+--- !u!114 &6827746130603291010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,39 +112,25 @@ MonoBehaviour:
   minNumber: -3
   maxNumber: 1
   minScale: 0.5
-  maxScale: 0.8
-  colorRange:
-    serializedVersion: 2
-    key0: {r: 1, g: 0.83137256, b: 0.8745098, a: 1}
-    key1: {r: 1, g: 0.9529412, b: 0.69803923, a: 1}
-    key2: {r: 0.5529412, g: 0.87058824, b: 1, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 31997
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
+  maxScale: 1.5
   hasAudio: 1
   audioClips:
-  - {fileID: 8300000, guid: c1ad8307f7be344ffb4b8653843372e5, type: 3}
+  - {fileID: 8300000, guid: 7f6ea6fe14e72479d89f571a00ad9978, type: 3}
+  - {fileID: 8300000, guid: 539be5fe77c2d4ba2a24eb0e59e38cc1, type: 3}
+  - {fileID: 8300000, guid: 27335d20dcaca4e8581d1f8b9defef1c, type: 3}
+  - {fileID: 8300000, guid: cb257310e25d641c58cecf2642bccefb, type: 3}
+  - {fileID: 8300000, guid: a43d962b6275a409d86ba4ff22cd555e, type: 3}
+  - {fileID: 8300000, guid: 668d7d655c30b4d5cb0f0116cdd98cf3, type: 3}
+  - {fileID: 8300000, guid: 7cd9fb7660da84efdac4b8599cc64f0f, type: 3}
+  - {fileID: 8300000, guid: bfc5df8da371949c8ae60f8fd72318dd, type: 3}
+  - {fileID: 8300000, guid: e7d8a45af76524509b44099fb96472a0, type: 3}
+  - {fileID: 8300000, guid: e20955e29dc8649a69eab64460c459c0, type: 3}
+  - {fileID: 8300000, guid: 9f7b5c422a8464ff29ce55bbd0796265, type: 3}
+  - {fileID: 8300000, guid: 144f4f5e5630d4d4f9092d7352e20571, type: 3}
+  - {fileID: 8300000, guid: 8b3b5c60653fa4e3cb7305402874259a, type: 3}
+  - {fileID: 8300000, guid: 08afe28289f3a47f1a7893f856163602, type: 3}
+  - {fileID: 8300000, guid: 8c31d9b137da6489e8e6ecbb7c191c97, type: 3}
+  - {fileID: 8300000, guid: 50c61ee8061cc4b938a003fe50a61d7e, type: 3}
   minOrbitRadius: 2
   maxOrbitRadius: 5
   minOrbitSpeed: 4
@@ -178,9 +164,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0.1
   MinDistance: 1
-  MaxDistance: 75
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -262,6 +248,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4508704637069054928}
     m_Modifications:
+    - target: {fileID: 4086240597577916102, guid: 2ed200060adf6a645b486572057a83b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Trail Particles
+      objectReference: {fileID: 0}
     - target: {fileID: 4086240597577916107, guid: 2ed200060adf6a645b486572057a83b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -316,11 +307,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4086240597577916102, guid: 2ed200060adf6a645b486572057a83b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Trail Particles
       objectReference: {fileID: 0}
     - target: {fileID: 4086240597577916101, guid: 2ed200060adf6a645b486572057a83b4,
         type: 3}

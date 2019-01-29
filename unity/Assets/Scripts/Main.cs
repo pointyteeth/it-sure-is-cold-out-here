@@ -13,6 +13,7 @@ public class Main : MonoBehaviour
     public static GameObject canvas = null;
     [SerializeField]
     public float warmUpTime = 0;
+    [System.NonSerialized]
     public bool gameStarted = false;
     private Selectable startButton;
 

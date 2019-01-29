@@ -21,11 +21,16 @@ public class Moon : Body
     [SerializeField]
     protected Texture[] textures = null;
 
+    private SpriteRenderer face = null;
+
     private Transform parentTransform = null;
 
     new void Awake() {
         base.Awake();
+        face = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        face.transform.parent = null;
         transform.rotation = Random.rotation;
+        face.transform.parent = this.transform;
     }
 
     // Start is called before the first frame update

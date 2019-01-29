@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLand : MonoBehaviour
 {
-    new private Rigidbody2D rigidbody;
+    private Rigidbody2D shipRigidbody;
     [SerializeField]
     private float rotationTime = 0;
     [SerializeField]
@@ -18,7 +18,7 @@ public class PlayerLand : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        shipRigidbody = GetComponent<Rigidbody2D>();
         StartCoroutine("BackUp");
     }
 
@@ -45,7 +45,7 @@ public class PlayerLand : MonoBehaviour
 
     IEnumerator BackUp() {
         do {
-            rigidbody.AddRelativeForce(Vector2.down * backUpSpeed * Time.deltaTime);
+            shipRigidbody.AddRelativeForce(Vector2.down * backUpSpeed * Time.deltaTime);
             yield return null;
         } while(Vector3.Distance(transform.position, Main.motherTransform.position) < (Main.motherTransform.localScale.x + transform.localScale.x * 1.5)/2);
         StartCoroutine("RotateToFacePlanet");
@@ -57,7 +57,7 @@ public class PlayerLand : MonoBehaviour
         if(collision.gameObject.name == "Mother" && facingAwayFromPlanet)
         {
             StopCoroutine("BackUp");
-            rigidbody.simulated = false;
+            shipRigidbody.simulated = false;
         }
     }
 

@@ -14,6 +14,7 @@ public class Main : MonoBehaviour
     [SerializeField]
     public float warmUpTime = 0;
     public bool gameStarted = false;
+    private Selectable startButton;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Main : MonoBehaviour
         motherTransform = GameObject.Find("Mother").transform;
         canvas = GameObject.Find("Canvas");
         StartCoroutine("WarmUpTrails");
+        startButton = GameObject.Find("start").GetComponent<Selectable>();
     }
 
     // Update is called once per frame
@@ -33,8 +35,8 @@ public class Main : MonoBehaviour
                 canvas.SetActive(false);
             } else if(!canvas.activeSelf) {
                 canvas.SetActive(true);
-                GameObject.Find("start").GetComponent<Selectable>().Select();
             }
+            startButton.Select();
         }
     }
 
@@ -45,7 +47,7 @@ public class Main : MonoBehaviour
             yield return new WaitForSeconds(warmUpTime);
         }
         Time.timeScale = 1;
-        GameObject.Find("start").GetComponent<Selectable>().interactable = true;
+        startButton.interactable = true;
         yield return null;
     }
 

@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 741232803227725967}
   - component: {fileID: 741232803227725952}
   m_Layer: 0
-  m_Name: Calm Sleep
+  m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

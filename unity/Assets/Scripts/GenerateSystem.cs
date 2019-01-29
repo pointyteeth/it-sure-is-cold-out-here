@@ -19,7 +19,7 @@ public class GenerateSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moon1Set.Setup(transform);
+        moon1Set.Setup(this.transform);
         for(int i = 0; i < moon1Set.list.Length; i++) {
             moon2Set.Setup(moon1Set.list[i].transform);
             for(int j = 0; j < moon2Set.list.Length; j++) {

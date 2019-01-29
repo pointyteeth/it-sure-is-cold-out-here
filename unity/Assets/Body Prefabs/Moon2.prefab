@@ -132,7 +132,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8c31d9b137da6489e8e6ecbb7c191c97, type: 3}
   - {fileID: 8300000, guid: 50c61ee8061cc4b938a003fe50a61d7e, type: 3}
   minOrbitRadius: 5
-  maxOrbitRadius: 30
+  maxOrbitRadius: 20
   minOrbitSpeed: 0.3
   maxOrbitSpeed: 1
   textures:

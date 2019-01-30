@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerLand : MonoBehaviour
 {
@@ -13,12 +14,15 @@ public class PlayerLand : MonoBehaviour
     private float angleError = 0;
     [SerializeField]
     private float backUpSpeed = 0;
+    [SerializeField]
+    private float fadeTime = 0;
     private bool facingAwayFromPlanet = false;
+    private PostProcessVolume postProcessVolume;
 
-    // Start is called before the first frame update
     void OnEnable()
     {
         shipRigidbody = GetComponent<Rigidbody2D>();
+        postProcessVolume = Camera.main.GetComponent<PostProcessVolume>();
         StartCoroutine("BackUp");
     }
 
@@ -36,6 +40,7 @@ public class PlayerLand : MonoBehaviour
             goalAngle = Vector3.SignedAngle(Vector3.up, transform.position, Vector3.forward);
             currentAngle = AngleMagic(transform.localRotation.eulerAngles.z);
             transform.rotation = Quaternion.AngleAxis(Mathf.SmoothDamp(currentAngle, goalAngle, ref currentVelocity, rotationTime, maxRotationSpeed),Vector3.forward);
+            FadeOut();
             yield return null;
         } while(Mathf.Abs(goalAngle - currentAngle) > angleError);
         facingAwayFromPlanet = true;
@@ -46,10 +51,16 @@ public class PlayerLand : MonoBehaviour
     IEnumerator BackUp() {
         do {
             shipRigidbody.AddRelativeForce(Vector2.down * backUpSpeed * Time.deltaTime);
+            FadeOut();
             yield return null;
         } while(Vector3.Distance(transform.position, Main.motherTransform.position) < (Main.motherTransform.localScale.x + transform.localScale.x * 1.5)/2);
         StartCoroutine("RotateToFacePlanet");
         yield return null;
+    }
+
+    void FadeOut() {
+        AudioListener.volume -= (1/fadeTime)*Time.deltaTime;
+        postProcessVolume.weight += (1/fadeTime)*Time.deltaTime;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -57,7 +68,9 @@ public class PlayerLand : MonoBehaviour
         if(collision.gameObject.name == "Mother" && facingAwayFromPlanet)
         {
             StopCoroutine("BackUp");
+            AudioListener.volume = 0;
             shipRigidbody.simulated = false;
+            GameObject.Find("Main").GetComponent<Main>().OpenEndUI();
         }
     }
 

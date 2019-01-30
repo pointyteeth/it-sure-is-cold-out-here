@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Main Camera Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 114924027612126904}
   - {fileID: 114179433532505514}
+  - {fileID: 114567462158986374}
 --- !u!114 &114179433532505514
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -33,7 +33,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 100
+    value: 5
   threshold:
     overrideState: 1
     value: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   dirtIntensity:
     overrideState: 0
     value: 0
---- !u!114 &114924027612126904
+--- !u!114 &114567462158986374
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,8 +120,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   colorFilter:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
   hueShift:
     overrideState: 0
     value: 0
@@ -132,8 +132,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   postExposure:
-    overrideState: 1
-    value: -24
+    overrideState: 0
+    value: 0
   contrast:
     overrideState: 0
     value: 0

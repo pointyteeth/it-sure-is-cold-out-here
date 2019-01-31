@@ -1,5 +1,3 @@
-# it sure is cold out here
-
 Find a safe place in space.
 
 Download [here](https://github.com/pointyteeth/it-sure-is-cold-out-here/releases/latest).

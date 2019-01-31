@@ -192,7 +192,7 @@ MonoBehaviour:
   minNumber: -3
   maxNumber: 1
   minScale: 0.5
-  maxScale: 1.5
+  maxScale: 1
   hasAudio: 1
   audioClips:
   - {fileID: 8300000, guid: 7f6ea6fe14e72479d89f571a00ad9978, type: 3}
@@ -211,7 +211,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 08afe28289f3a47f1a7893f856163602, type: 3}
   - {fileID: 8300000, guid: 8c31d9b137da6489e8e6ecbb7c191c97, type: 3}
   - {fileID: 8300000, guid: 50c61ee8061cc4b938a003fe50a61d7e, type: 3}
-  minOrbitRadius: 2
+  minOrbitRadius: 3
   maxOrbitRadius: 5
   minOrbitSpeed: 4
   maxOrbitSpeed: 8

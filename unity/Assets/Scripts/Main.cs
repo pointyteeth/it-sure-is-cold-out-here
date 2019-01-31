@@ -23,6 +23,7 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         Physics2D.gravity = Vector3.zero;
         AudioListener.volume = 0;
         Camera.main.cullingMask = 1 << LayerMask.NameToLayer("Player");

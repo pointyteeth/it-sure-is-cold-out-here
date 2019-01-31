@@ -52,7 +52,7 @@ public class Main : MonoBehaviour
     IEnumerator WarmUpTrails()
     {
         Time.timeScale = 100;
-        while(Time.time < warmUpTime) {
+        while(Time.timeSinceLevelLoad < warmUpTime) {
             yield return new WaitForSeconds(warmUpTime);
         }
         Time.timeScale = 1;
@@ -60,22 +60,31 @@ public class Main : MonoBehaviour
         yield return null;
     }
 
-    public void StartGame()
+    public void EnterGame()
     {
-        player.PutShipInStartPosition();
-        Camera.main.cullingMask = -1;
-        canvas.SetActive(false);
-        AudioListener.volume = 1;
-        gameStarted = true;
+        if(gameStarted) {
+            canvas.SetActive(false);
+        } else {
+            player.PutShipInStartPosition();
+            Camera.main.cullingMask = -1;
+            startButton.transform.Find("Text").GetComponent<Text>().text = "continue";
+            Canvas.ForceUpdateCanvases();
+            canvas.SetActive(false);
+            AudioListener.volume = 1;
+            gameStarted = true;
+        }
     }
 
-    public void OpenEndUI()
+    public IEnumerator OpenEndUI(float delay=0)
     {
+        yield return new WaitForSeconds(delay);
+        gameStarted = false;
         mainMenu.SetActive(false);
         endUI.SetActive(true);
-        endUI.transform.Find("restart").GetComponent<Selectable>().Select();
         Camera.main.cullingMask = 1 << LayerMask.NameToLayer("UI");
+        AudioListener.volume = 0;
         canvas.SetActive(true);
+        endUI.transform.Find("restart").GetComponent<Selectable>().Select();
     }
 
     public void RestartGame() {

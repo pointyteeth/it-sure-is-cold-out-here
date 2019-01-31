@@ -24,15 +24,18 @@ public class PlayerLand : MonoBehaviour
         shipRigidbody = GetComponent<Rigidbody2D>();
         postProcessVolume = Camera.main.GetComponent<PostProcessVolume>();
         StartCoroutine("BackUp");
+        StartCoroutine(GameObject.Find("Main").GetComponent<Main>().OpenEndUI(fadeTime));
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        AudioListener.volume -= (1/fadeTime)*Time.deltaTime;
+        postProcessVolume.weight += (1/fadeTime)*Time.deltaTime;
     }
 
-    IEnumerator RotateToFacePlanet() {
+    IEnumerator RotateToFacePlanet()
+    {
         float goalAngle = 0;
         float currentVelocity = 0;
         float currentAngle = 0;
@@ -40,7 +43,6 @@ public class PlayerLand : MonoBehaviour
             goalAngle = Vector3.SignedAngle(Vector3.up, transform.position, Vector3.forward);
             currentAngle = AngleMagic(transform.localRotation.eulerAngles.z);
             transform.rotation = Quaternion.AngleAxis(Mathf.SmoothDamp(currentAngle, goalAngle, ref currentVelocity, rotationTime, maxRotationSpeed),Vector3.forward);
-            FadeOut();
             yield return null;
         } while(Mathf.Abs(goalAngle - currentAngle) > angleError);
         facingAwayFromPlanet = true;
@@ -48,19 +50,14 @@ public class PlayerLand : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator BackUp() {
+    IEnumerator BackUp()
+    {
         do {
             shipRigidbody.AddRelativeForce(Vector2.down * backUpSpeed * Time.deltaTime);
-            FadeOut();
             yield return null;
         } while(Vector3.Distance(transform.position, Main.motherTransform.position) < (Main.motherTransform.localScale.x + transform.localScale.x * 1.5)/2);
         StartCoroutine("RotateToFacePlanet");
         yield return null;
-    }
-
-    void FadeOut() {
-        AudioListener.volume -= (1/fadeTime)*Time.deltaTime;
-        postProcessVolume.weight += (1/fadeTime)*Time.deltaTime;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -68,13 +65,12 @@ public class PlayerLand : MonoBehaviour
         if(collision.gameObject.name == "Mother" && facingAwayFromPlanet)
         {
             StopCoroutine("BackUp");
-            AudioListener.volume = 0;
             shipRigidbody.simulated = false;
-            GameObject.Find("Main").GetComponent<Main>().OpenEndUI();
         }
     }
 
-    float AngleMagic(float angle) {
+    float AngleMagic(float angle)
+    {
         angle = Mathf.Repeat(angle, 360);
         if(angle > 180) angle -= 360;
         return angle;

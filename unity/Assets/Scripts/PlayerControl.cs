@@ -16,6 +16,8 @@ public class PlayerControl : MonoBehaviour
     private float shipRotationSpeed = 0f;
     [SerializeField]
     private float maxShipRotation = 0f;
+    [SerializeField]
+    private float startRotationVariance = 0f;
     private ParticleSystem fumes = null;
     private ParticleSystem.MainModule fumesMain;
 
@@ -31,7 +33,7 @@ public class PlayerControl : MonoBehaviour
     public void PutShipInStartPosition() {
         transform.position = Vector3.up * (Main.worldRadius - 10);
         transform.RotateAround(Vector3.zero, Vector3.forward, Random.Range(0, 360));
-        transform.Rotate(Vector3.forward * 180);
+        transform.Rotate(Vector3.forward * (180 + Random.Range(-startRotationVariance/2, startRotationVariance/2)));
         shipRigidbody.simulated = true;
     }
 

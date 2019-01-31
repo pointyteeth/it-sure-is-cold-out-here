@@ -20,7 +20,7 @@ public class LoadingBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        image.rectTransform.sizeDelta = new Vector2(Mathf.Lerp(0, fullWidth, Time.time/main.warmUpTime), image.rectTransform.sizeDelta.y) ;
+        image.rectTransform.sizeDelta = new Vector2(Mathf.Lerp(0, fullWidth, Time.timeSinceLevelLoad/main.warmUpTime), image.rectTransform.sizeDelta.y) ;
 
     }
 }

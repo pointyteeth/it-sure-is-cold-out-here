@@ -147,7 +147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 84.807465, y: 0}
+  m_AnchoredPosition: {x: 84.04706, y: 0}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &77671028
@@ -443,6 +443,8 @@ MonoBehaviour:
   hasAudio: 1
   audioClips:
   - {fileID: 8300000, guid: c1ad8307f7be344ffb4b8653843372e5, type: 3}
+  faceSprites:
+  - {fileID: 21300000, guid: 63c166d1b17684ffc9a9af9f8ab186f1, type: 3}
 --- !u!1 &127651809
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 79.20653, y: 0}
+  m_AnchoredPosition: {x: 77.270584, y: 0}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232692654
@@ -6387,7 +6389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50.08168, y: 0}
+  m_AnchoredPosition: {x: 49.035294, y: 0}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919497777
@@ -7021,7 +7023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 85.92766, y: 0}
+  m_AnchoredPosition: {x: 86.30588, y: 0}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1319612392
@@ -7725,7 +7727,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983887383}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1737a7014f6e1674ab5af139e5b2db4b, type: 2}
   m_CullingMode: 0
@@ -7773,7 +7775,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e4ffd6ba755708488cd1a9fe938ea5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63c166d1b17684ffc9a9af9f8ab186f1, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

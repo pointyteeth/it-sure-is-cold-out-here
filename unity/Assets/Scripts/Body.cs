@@ -27,6 +27,10 @@ public class Body : MonoBehaviour
     private AudioClip[] audioClips = null;
     protected AudioSource audioSource = null;
 
+    [SerializeField]
+    private Sprite[] faceSprites = null;
+    protected Sprite faceSprite = null;
+
     protected void Awake() {
         transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
     }
@@ -40,6 +44,8 @@ public class Body : MonoBehaviour
             audioSource.Play();
             StartCoroutine("SyncAudio");
         }
+        faceSprite = faceSprites[Random.Range(0, faceSprites.Length)];
+        transform.Find("Face").GetComponent<SpriteRenderer>().sprite = faceSprite;
     }
 
     // Update is called once per frame

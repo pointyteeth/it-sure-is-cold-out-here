@@ -131,6 +131,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 34a3dabb4493f4ae18ee8fbcfc2adaeb, type: 3}
   - {fileID: 8300000, guid: 34a3dabb4493f4ae18ee8fbcfc2adaeb, type: 3}
   - {fileID: 8300000, guid: 34a3dabb4493f4ae18ee8fbcfc2adaeb, type: 3}
+  faceSprites:
+  - {fileID: 21300000, guid: 4a0256e34db0149618661323740fb6a6, type: 3}
+  - {fileID: 21300000, guid: 7cfacbbd37ea74f77ab3644d01564fba, type: 3}
+  - {fileID: 21300000, guid: 958bcea571be84aba85492b4291c6e49, type: 3}
   minOrbitRadius: 25
   maxOrbitRadius: 175
   minOrbitSpeed: 0.2
@@ -306,7 +310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e4ffd6ba755708488cd1a9fe938ea5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a0256e34db0149618661323740fb6a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -325,7 +329,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5975203102497149766}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1737a7014f6e1674ab5af139e5b2db4b, type: 2}
   m_CullingMode: 0
